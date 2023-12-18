@@ -34,8 +34,7 @@ def call_llm(inp: PromptIn):
     try:
       response = g4f.ChatCompletion.create(
         model=g4f.models.gpt_4,
-        # model=g4f.models.llama2_70b,
-        # provider=g4f.Provider.DeepInfra,
+        provider=g4f.Provider.Liaobots,
         messages=[{"role": "user", "content": inp.prompt}],
         stream=False,
       )
